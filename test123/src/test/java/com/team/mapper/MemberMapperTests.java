@@ -41,20 +41,42 @@ public class MemberMapperTests {
 	}
 	
 	/* 로그인 쿼리 mapper 메서드 테스트 */
-    @Test
+//    @Test
     public void memberLogin() throws Exception{
         
         MemberVO member = new MemberVO();
         
         /* 올바른 아이디 비번 입력경우 */
-        member.setUserId("asd@asd.com");
-        member.setUserPassword("asd123");
+//        member.setUserId("asd@asd.com");
+//        member.setUserPassword("asd123");
         
         /* 올바른 않은 아이디 비번 입력경우 */
-//        member.setUserId("asd1@asd.com");
-//        member.setUserPassword("asd1234");
+        member.setUserId("asd1@asd.com");
+        member.setUserPassword("asd1234");
         
         membermapper.memberLogin(member);
-        
+    }
+    
+    //회원수정 테스트
+//    @Test
+    public void updateMember() throws Exception{
+    	MemberVO member = new MemberVO();
+    	
+    	member.setUserId("as");
+    	member.setUserPassword("test1234");
+		member.setUserName("test1");
+		member.setUserTel("111-1111-1111");
+    	
+		membermapper.updateMember(member);
+    }
+    
+ 	//회원탈퇴 테스트
+    @Test
+    public void deleteMember() throws Exception{
+    	MemberVO member = new MemberVO();
+    	
+    	member.setUserId("as");
+    	
+		membermapper.deleteMember(member);
     }
 }

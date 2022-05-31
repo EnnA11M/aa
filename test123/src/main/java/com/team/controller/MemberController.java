@@ -8,7 +8,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -102,4 +101,33 @@ public class MemberController {
         
         return "redirect:/member/main";
     }
+    
+    //회원수정 페이지 이동
+  	@GetMapping("/info")
+  	public void infoGET() {
+  		log.info("회원수정 페이지 진입");
+  	}
+  	
+  	//회원수정
+  	@PostMapping("/update.do")
+  	public String updatePOST(HttpSession session, MemberVO member) throws Exception {
+  		
+  		memberservice.updateMember(member);
+  		
+  		session.setAttribute("member", member);
+  		
+  		return "redirect:/member/main";
+  	}
+  	
+  	//회원탈퇴
+  	@PostMapping("/delete.do")
+  	public String deletePOST(HttpSession session, MemberVO member) throws Exception {
+  		
+  		memberservice.deleteMember(member);
+  		
+  		session.invalidate();
+  		
+  		return "redirect:/member/main";
+  	}
+  	
 }

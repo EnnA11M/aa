@@ -89,7 +89,7 @@
     var telCheck = false;
     
     $(document).ready(function(){
-    //회원가입 버튼(회원가입 기능 작동)
+    		//회원가입 버튼(회원가입 기능 작동)
     	$(".join_button").click(function(){
     		
     		/* 입력값 변수 */

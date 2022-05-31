@@ -41,7 +41,7 @@
 	                <c:if test="${ member != null }">
 	            		<span class="navbar-text">${member.userName}님  |</span>
 						<li class="nav-item"><a class="nav-link" href="logout.do">로그아웃</a></li>
-						<li class="nav-item"><a class="nav-link" href="ㅁㄴㅇ">회원수정</a></li>
+						<li class="nav-item"><a class="nav-link" href="info">회원수정</a></li>
 	                </c:if>
 				</ul>
 			</div>

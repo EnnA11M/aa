@@ -16,7 +16,6 @@ public class MemberServiceImpl implements MemberService {
 	public void memberJoin(MemberVO member) throws Exception {
 		
 		membermapper.memberJoin(member);
-		
 	}
 	
 	@Override
@@ -31,4 +30,16 @@ public class MemberServiceImpl implements MemberService {
         
         return membermapper.memberLogin(member);
     }
+    
+    @Override
+	public void updateMember(MemberVO member) throws Exception {
+		
+		membermapper.updateMember(member);
+	}
+    
+    @Override
+	public void deleteMember(MemberVO member) throws Exception {
+		
+		membermapper.deleteMember(member);
+	}
 }
